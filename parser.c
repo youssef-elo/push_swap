@@ -6,7 +6,7 @@
 /*   By: yel-ouaz <yel-ouaz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 22:12:12 by yel-ouaz          #+#    #+#             */
-/*   Updated: 2024/07/14 01:24:18 by yel-ouaz         ###   ########.fr       */
+/*   Updated: 2024/07/16 01:04:53 by yel-ouaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,10 @@ int check_args(int argc, char **args)
 	while(i < argc)
 	{
 		if(!ft_is_digit(args[i]))
+		{
+			write(2, "Error\n", 6);
 			return (0);
+		}
 		i++;
 	}
 	return (1);
@@ -75,8 +78,8 @@ long	ft_atoi(char *str)
 	long	check;
 
 	i = 0;
-	sign = 1;
 	r = 0;
+	sign = 1;
 	if (str[i] == '-' || str[i] == '+')
 	{
 		if (str[i++] == '-')
@@ -91,6 +94,8 @@ long	ft_atoi(char *str)
 		r += (str[i] - 48);
 		i++;
 	}
+	if (str[i])
+		return (2147483650);
 	return (r * sign);
 }
 
@@ -125,7 +130,7 @@ void ft_exit(char **split, t_node **head)
 		free_arr(split);
 	if (head)
 		free_list(*head);
-	write(1, "Error\n", 6);
+	write(2, "Error\n", 6);
 	exit(0);
 }
 

@@ -6,7 +6,7 @@
 /*   By: yel-ouaz <yel-ouaz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 22:12:10 by yel-ouaz          #+#    #+#             */
-/*   Updated: 2024/07/13 04:38:37 by yel-ouaz         ###   ########.fr       */
+/*   Updated: 2024/07/16 01:31:11 by yel-ouaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,5 +45,17 @@ void	rr(t_node **head_a, t_node **head_b);
 void	rra(t_node **head);
 void	rrb(t_node **head);
 void	rrr(t_node **head_a, t_node **head_b);
+void	sort_two(t_node **head_a);
+void	sort_three(t_node **head_a);
+void	sort_four(t_node **head_a, t_node **head_b);
+int		lst_size(t_node *head);
+void	top_a(t_node **head, int position);
+void	top_b(t_node **head, int position);
+int		get_max(t_node *head);
+int		get_min(t_node *head);
+int		sorted(t_node *head);
+void	put_stack(t_node *head_a,t_node *head_b);
+void	sort_five(t_node **head_a, t_node **head_b);
+void	small_sort(int argc, t_node **head_a, t_node **head_b);
 
 #endif

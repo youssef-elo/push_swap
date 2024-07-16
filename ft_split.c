@@ -6,7 +6,7 @@
 /*   By: yel-ouaz <yel-ouaz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/09 16:40:36 by yel-ouaz          #+#    #+#             */
-/*   Updated: 2024/07/12 01:45:15 by yel-ouaz         ###   ########.fr       */
+/*   Updated: 2024/07/15 02:45:16 by yel-ouaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -136,6 +136,8 @@ char	**ft_split(char *s, char c)
 	if (s == NULL) 
 		return (NULL);
 	w = ft_cwords(s, c);
+	if (w == 0)
+		return (NULL);
 	rs = (char **)malloc((w + 1) * sizeof(char *));
 	if (rs == NULL)
 		return (NULL);

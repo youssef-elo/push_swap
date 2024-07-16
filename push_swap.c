@@ -6,7 +6,7 @@
 /*   By: yel-ouaz <yel-ouaz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 22:12:55 by yel-ouaz          #+#    #+#             */
-/*   Updated: 2024/07/14 02:49:58 by yel-ouaz         ###   ########.fr       */
+/*   Updated: 2024/07/16 01:31:19 by yel-ouaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int countDigits(int num) {
 #define RED "\033[31m"
 #define BLUE "\033[34m"
 #define RESET "\033[0m"
-void put_satck(t_node *head_a,t_node *head_b)
+void put_stack(t_node *head_a,t_node *head_b)
 {
 	int spaces;
 	char *str = "                          ";
@@ -61,30 +61,29 @@ int main(int argc, char **args)
 {
 	t_node	*head_a;
 	t_node	*head_b;
+	int		size;
 	
 	head_a = NULL;
 	head_b = NULL;
 	if (argc == 1)
 		return (0);
 	if (!check_args(argc, args)) 
-	{
-		write(1, "Error\n", 6);
 		return (0);
-	}
+
 	make_list(argc, args, &head_a);
 	check_list(head_a);
-	put_satck(head_a, head_b);
-	pb(&head_a, &head_b);
-	put_satck(head_a, head_b);
-	pb(&head_a, &head_b);
-	put_satck(head_a, head_b);
-	pb(&head_a, &head_b);
-	put_satck(head_a, head_b);
-	pb(&head_a, &head_b);
-	put_satck(head_a, head_b);
-	pb(&head_a, &head_b);
-	put_satck(head_a, head_b);
+	if (sorted(head_a))
+		return (0);
+	size = lst_size(head_a);
+	if (size >=2 && size <= 5)
+		small_sort(size, &head_a, &head_b);
+	// put_stack(head_a, head_b);
 }
 //check for dupicates in the list done
 //make the movements functions done
 //sort it 
+
+//sort four done
+//sort five done
+//sort the rest
+//push
