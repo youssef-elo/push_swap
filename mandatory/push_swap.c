@@ -6,7 +6,7 @@
 /*   By: yel-ouaz <yel-ouaz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/11 22:12:55 by yel-ouaz          #+#    #+#             */
-/*   Updated: 2024/07/27 15:28:42 by yel-ouaz         ###   ########.fr       */
+/*   Updated: 2024/07/28 14:48:46 by yel-ouaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,4 +38,3 @@ int	main(int argc, char **args)
 		the_rest(&head_a, &head_b);
 	free_list(head_a);
 }
-//free list

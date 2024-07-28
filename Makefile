@@ -6,36 +6,41 @@
 #    By: yel-ouaz <yel-ouaz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/12 01:39:11 by yel-ouaz          #+#    #+#              #
-#    Updated: 2024/07/27 15:52:53 by yel-ouaz         ###   ########.fr        #
+#    Updated: 2024/07/27 20:22:58 by yel-ouaz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
+NAME = push_swap
 
-CFILES = sort.c\
-		parser.c\
-		moves_a.c\
-		moves_b.c \
-		ft_split.c \
-		push_push.c \
-		push_swap.c  \
-		small_sort.c  \
-		list_tools.c   \
-		stack_tools.c   \
-		moves_joint.c    \
-		ft_split_tools.c  \
+CFILES = mandatory/sort.c\
+		mandatory/parser.c\
+		mandatory/moves_a.c\
+		mandatory/moves_b.c \
+		mandatory/ft_split.c \
+		mandatory/push_push.c \
+		mandatory/push_swap.c  \
+		mandatory/small_sort.c  \
+		mandatory/list_tools.c   \
+		mandatory/stack_tools.c   \
+		mandatory/moves_joint.c    \
+		mandatory/ft_split_tools.c  \
 
 OFILES = $(CFILES:.c=.o)
 
 FLAGS = -Wall -Werror -Wextra
 
-all : $(OFILES) 
+all : $(NAME)
+
+$(NAME) : $(OFILES) 
 	cc $(OFILES) $(FLAGS) -o push_swap
 
-%.o : %.c push_swap.h
-	cc -c $(FLAGS) $<
+mandatory/%.o : mandatory/%.c mandatory/push_swap.h
+	cc -c $(FLAGS) $< -o $@
 
 clean :
 	rm -rf $(OFILES)
 
 fclean : clean
 	rm -rf push_swap
+
+re : fclean all

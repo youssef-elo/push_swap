@@ -46,7 +46,7 @@ done
 
 instruction_count=$(test $element_count)
 
-while ((instruction_count <= 5500))
+while ((instruction_count <= 700))
 do
     echo -e "${GREEN}Success: The program sorted the numbers in $instruction_count instructions.${DEF_COLOR}"
     instruction_count=$(test $element_count)
