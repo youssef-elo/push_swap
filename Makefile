@@ -6,13 +6,17 @@
 #    By: yel-ouaz <yel-ouaz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/12 01:39:11 by yel-ouaz          #+#    #+#              #
-#    Updated: 2024/07/27 20:22:58 by yel-ouaz         ###   ########.fr        #
+#    Updated: 2024/07/28 17:31:02 by yel-ouaz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-CFILES = mandatory/sort.c\
+BONUS = push_swap_bonus
+
+FLAGS = -Wall -Werror -Wextra
+
+MFILES = mandatory/sort.c\
 		mandatory/parser.c\
 		mandatory/moves_a.c\
 		mandatory/moves_b.c \
@@ -25,11 +29,28 @@ CFILES = mandatory/sort.c\
 		mandatory/moves_joint.c    \
 		mandatory/ft_split_tools.c  \
 
-OFILES = $(CFILES:.c=.o)
+BFILES =bonus/read_exec.c    \
+		bonus/parser_bonus.c  \
+		bonus/moves_b_bonus.c  \
+		bonus/moves_a_bonus.c   \
+		bonus/ft_split_bonus.c   \
+		bonus/push_swap_bonus.c   \
+		bonus/list_tools_bonus.c   \
+		bonus/moves_joint_bonus.c   \
+		bonus/gnl/get_next_line.c    \
+		bonus/ft_split_tools_bonus.c  \
+		bonus/gnl/get_next_line_utils.c\
 
-FLAGS = -Wall -Werror -Wextra
+BOFILES = $(BFILES:.c=.o)
+
+OFILES = $(MFILES:.c=.o)
 
 all : $(NAME)
+
+bonus : $(BONUS)
+
+$(BONUS) : $(BOFILES)
+	cc $(BOFILES) $(FLAGS) -o push_swap_bonus
 
 $(NAME) : $(OFILES) 
 	cc $(OFILES) $(FLAGS) -o push_swap
@@ -37,10 +58,13 @@ $(NAME) : $(OFILES)
 mandatory/%.o : mandatory/%.c mandatory/push_swap.h
 	cc -c $(FLAGS) $< -o $@
 
+bonus/%.o : bonus/%.c bonus/push_swap_bonus.h bonus/gnl/get_next_line.h
+	cc -c $(FLAGS) $< -o $@
+
 clean :
-	rm -rf $(OFILES)
+	rm -rf $(OFILES) $(BOFILES)
 
 fclean : clean
-	rm -rf push_swap
+	rm -rf $(NAME) $(BONUS)
 
 re : fclean all
