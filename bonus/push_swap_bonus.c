@@ -6,7 +6,7 @@
 /*   By: yel-ouaz <yel-ouaz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 14:47:36 by yel-ouaz          #+#    #+#             */
-/*   Updated: 2024/07/28 17:21:39 by yel-ouaz         ###   ########.fr       */
+/*   Updated: 2024/08/03 17:02:25 by yel-ouaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,8 @@ int	main(int argc, char **args)
 	check_list(head_a);
 	if (!exec_command(&head_a, &head_b))
 	{
+		free_list(head_a);
+		free_list(head_b);
 		write(2, "Error\n", 6);
 		return (1);
 	}

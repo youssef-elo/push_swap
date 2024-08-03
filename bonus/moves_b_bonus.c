@@ -6,7 +6,7 @@
 /*   By: yel-ouaz <yel-ouaz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 14:46:54 by yel-ouaz          #+#    #+#             */
-/*   Updated: 2024/07/28 16:27:11 by yel-ouaz         ###   ########.fr       */
+/*   Updated: 2024/08/03 17:01:46 by yel-ouaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	sb(t_node **head)
 {
 	t_node	*third;
 
-	if (!head || !((*head)->next))
+	if (!head || !(*head) || !((*head)->next))
 		return ;
 	third = (*head)->next->next;
 	(*head)->next->next = *head;

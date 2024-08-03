@@ -6,7 +6,7 @@
 /*   By: yel-ouaz <yel-ouaz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/12 23:15:40 by yel-ouaz          #+#    #+#             */
-/*   Updated: 2024/07/27 14:50:17 by yel-ouaz         ###   ########.fr       */
+/*   Updated: 2024/08/03 17:01:06 by yel-ouaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ void	sa(t_node **head)
 {
 	t_node	*third;
 
-	if (!head || !((*head)->next))
+	if (!head || !(*head) || !((*head)->next))
 		return ;
 	third = (*head)->next->next;
 	(*head)->next->next = *head;
