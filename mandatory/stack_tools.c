@@ -6,7 +6,7 @@
 /*   By: yel-ouaz <yel-ouaz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 14:29:20 by yel-ouaz          #+#    #+#             */
-/*   Updated: 2024/07/27 14:33:06 by yel-ouaz         ###   ########.fr       */
+/*   Updated: 2024/08/03 20:41:15 by yel-ouaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,12 +36,22 @@ int	get_max(t_node *head)
 
 int	get_min(t_node *head)
 {
-	int	position;
+	t_node	*tmp;
+	int		position;
+	int		smallest_index;
 
+	tmp = head;
 	position = 1;
+	smallest_index = 10;
+	while (tmp)
+	{
+		if (tmp->index < smallest_index)
+			smallest_index = tmp->index;
+		tmp = tmp->next;
+	}
 	while (head)
 	{
-		if (head->index == 1)
+		if (head->index == smallest_index)
 			return (position);
 		head = head->next;
 		position++;
