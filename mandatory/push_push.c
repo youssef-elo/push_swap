@@ -6,7 +6,7 @@
 /*   By: yel-ouaz <yel-ouaz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 14:35:49 by yel-ouaz          #+#    #+#             */
-/*   Updated: 2024/07/27 14:39:37 by yel-ouaz         ###   ########.fr       */
+/*   Updated: 2024/08/09 13:56:40 by yel-ouaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,47 +39,14 @@ void	push_back(t_node **head_a, t_node **head_b)
 	}
 }
 
-// int	best_move(t_node *head, int chunk)
-// {
-// 	t_node	*tmp;
-// 	int		first;
-// 	int		last;
-// 	int		i;
-
-// 	1
-// 	tmp = head;
-// 	last = 0;
-// 	first = 1;
-// 	i = 1;
-// 	while (head)
-// 	{
-// 		if (head->index <= chunk)
-// 			break;
-// 		head = head->next;
-// 		first++;
-// 	}
-// 	while(tmp)
-// 	{
-// 		if (tmp->index <= chunk)
-// 			last = i; 
-// 		tmp = tmp->next;
-// 		i++;
-// 	}
-// 	if (last == first)
-// 		return (first);
-// 	if (ft_closest(first, last, head) == 1)
-// 		return (first);
-// 	return (last);
-// }
-
 void	set_chunk(int size_a, int *chunk, int *i)
 {
 	*chunk = size_a / 4;
-	*i = 25;
+	*i = size_a / 4;
 	if (size_a > 100)
 	{
-		*chunk = 55;
-		*i = 55;
+		*chunk = size_a / 9;
+		*i = size_a / 9;
 	}
 }
 
