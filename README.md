@@ -1,14 +1,18 @@
 # 🌐 Overview
-	Push Swap is a project that challenges you to sort data on two stacks (Stack A and Stack B) using a limited set of operations with the fewest moves possible. The goal is to devise an efficient sorting algorithm that can handle varying input sizes (from 3 to 500+ numbers) while adhering to strict constraints.
+Push Swap is a project that challenges you to sort data on two stacks (Stack A and Stack B) using a limited set of operations with the fewest moves possible. The goal is to devise an efficient sorting algorithm that can handle varying input sizes (from 3 to 500+ numbers) while adhering to strict constraints.
 
 Key Concepts Demonstrated
+
 ✔️ Algorithm design (sorting under constraints)
+
 ✔️ Stack operations (push, pop, swap, rotate)
+
 ✔️ Optimization (minimizing move count)
+
 ✔️ Input validation (error handling)
 
 # 🎯 Features
-Core Functionality
+
 Sorts integers using only allowed stack operations
 
 Visualizes sorting steps (bonus)
