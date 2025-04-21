@@ -6,7 +6,7 @@
 /*   By: yel-ouaz <yel-ouaz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 14:47:36 by yel-ouaz          #+#    #+#             */
-/*   Updated: 2024/08/03 17:02:25 by yel-ouaz         ###   ########.fr       */
+/*   Updated: 2024/08/06 19:31:42 by yel-ouaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(int argc, char **args)
 		write(2, "Error\n", 6);
 		return (1);
 	}
-	if (sorted(head_a) && head_b == NULL)
+	if (head_a && sorted(head_a) && head_b == NULL)
 		write(1, "OK\n", 3);
 	else
 		write(1, "KO\n", 3);

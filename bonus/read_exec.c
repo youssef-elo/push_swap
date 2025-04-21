@@ -6,13 +6,13 @@
 /*   By: yel-ouaz <yel-ouaz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/28 16:05:51 by yel-ouaz          #+#    #+#             */
-/*   Updated: 2024/07/28 17:22:24 by yel-ouaz         ###   ########.fr       */
+/*   Updated: 2024/08/03 16:57:59 by yel-ouaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap_bonus.h"
 
-int	ft_strncmp(char *s1, char *s2, size_t n)
+int	ft_strcmp(char *s1, char *s2)
 {
 	size_t			i;
 	unsigned char	*p1;
@@ -21,38 +21,40 @@ int	ft_strncmp(char *s1, char *s2, size_t n)
 	p1 = (unsigned char *)s1;
 	p2 = (unsigned char *)s2;
 	i = 0;
-	while (i < n && (p1[i] || p2[i]))
+	while (p1[i] && p2[i])
 	{
 		if (p1[i] != p2[i])
 			return (p1[i] - p2[i]);
 		i++;
 	}
+	if (s1[i] != '\n')
+		return (1);
 	return (0);
 }
 
 int	handle_command(char *str, t_node **head_a, t_node **head_b)
 {
-	if (ft_strncmp(str, "rra", 3) == 0)
+	if (ft_strcmp(str, "rra") == 0)
 		rra(head_a);
-	else if (ft_strncmp(str, "rrb", 3) == 0)
+	else if (ft_strcmp(str, "rrb") == 0)
 		rrb(head_b);
-	else if (ft_strncmp(str, "rrr", 3) == 0)
+	else if (ft_strcmp(str, "rrr") == 0)
 		rrr(head_a, head_b);
-	else if (ft_strncmp(str, "sa", 2) == 0)
+	else if (ft_strcmp(str, "sa") == 0)
 		sa(head_a);
-	else if (ft_strncmp(str, "sb", 2) == 0)
+	else if (ft_strcmp(str, "sb") == 0)
 		sb(head_b);
-	else if (ft_strncmp(str, "ss", 2) == 0)
+	else if (ft_strcmp(str, "ss") == 0)
 		ss(head_a, head_b);
-	else if (ft_strncmp(str, "pb", 2) == 0)
+	else if (ft_strcmp(str, "pb") == 0)
 		pb(head_a, head_b);
-	else if (ft_strncmp(str, "pa", 2) == 0)
+	else if (ft_strcmp(str, "pa") == 0)
 		pa(head_a, head_b);
-	else if (ft_strncmp(str, "ra", 2) == 0)
+	else if (ft_strcmp(str, "ra") == 0)
 		ra(head_a);
-	else if (ft_strncmp(str, "rb", 2) == 0)
+	else if (ft_strcmp(str, "rb") == 0)
 		rb(head_b);
-	else if (ft_strncmp(str, "rr", 2) == 0)
+	else if (ft_strcmp(str, "rr") == 0)
 		rr(head_a, head_b);
 	else
 		return (0);

@@ -6,13 +6,13 @@
 #    By: yel-ouaz <yel-ouaz@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/07/12 01:39:11 by yel-ouaz          #+#    #+#              #
-#    Updated: 2024/07/28 17:31:02 by yel-ouaz         ###   ########.fr        #
+#    Updated: 2024/08/03 20:40:41 by yel-ouaz         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
 
-BONUS = push_swap_bonus
+BONUS = checker
 
 FLAGS = -Wall -Werror -Wextra
 
@@ -49,11 +49,11 @@ all : $(NAME)
 
 bonus : $(BONUS)
 
-$(BONUS) : $(BOFILES)
-	cc $(BOFILES) $(FLAGS) -o push_swap_bonus
-
 $(NAME) : $(OFILES) 
-	cc $(OFILES) $(FLAGS) -o push_swap
+	cc $(OFILES) $(FLAGS) -o $(NAME)
+
+$(BONUS) : $(BOFILES)
+	cc $(BOFILES) $(FLAGS) -o $(BONUS)
 
 mandatory/%.o : mandatory/%.c mandatory/push_swap.h
 	cc -c $(FLAGS) $< -o $@

@@ -6,7 +6,7 @@
 /*   By: yel-ouaz <yel-ouaz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/07/27 14:47:14 by yel-ouaz          #+#    #+#             */
-/*   Updated: 2024/07/27 14:49:54 by yel-ouaz         ###   ########.fr       */
+/*   Updated: 2025/04/21 15:02:03 by yel-ouaz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,5 +86,6 @@ void	rrr(t_node **head_a, t_node **head_b)
 		last->next = *head_b;
 		*head_b = last;
 	}
-	(i) && (write(1, "rrr\n", 4));
+	if (i)
+		write(1, "rrr\n", 4);
 }
